@@ -9,6 +9,13 @@
 
     Usage:
     {% render 'price', product: product %}
+
+    Examples:
+    {% render 'price' %}
+    {% render 'price', product: block.settings.product %}
+    {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+    {% render 'price', product: product, use_variant: true, show_badges: false %}
+    {% render 'price', product: product_card_product, price_class: '' %}
 {% endcomment %}
 {%- liquid
   if use_variant
@@ -82,11 +89,11 @@
     </small>
   </div>
   {%- if show_badges -%}
-    <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
+    <span class="price-sale">
       {{ 'products.product.on_sale' | t }}
     </span>
 
-    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
+    <span class="price-sold-out">
       {{ 'products.product.sold_out' | t }}
     </span>
   {%- endif -%}

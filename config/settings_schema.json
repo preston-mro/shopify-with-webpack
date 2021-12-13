@@ -23,8 +23,8 @@
       {
         "type": "font_picker",
         "id": "base_font_family",
-        "default": "Montserrat",
-        "label": "Base Font Family"
+        "label": "Base Font Family",
+        "default": "Montserrat"
       },
       {
         "type": "select",

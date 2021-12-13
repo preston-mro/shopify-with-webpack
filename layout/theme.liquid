@@ -16,6 +16,12 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
+    <!-- FONTS -->
+    <!-- link to font goes here -->
+
+    <!-- MAIN STYLESHEET -->
+    <link rel="stylesheet" href="theme.css">
+
     <!-- BASELINE STYLES -->
     <style>
       html {
@@ -27,12 +33,6 @@
         color: {{ settings.base_font_color }};
       }
     </style>
-
-    <!-- FONTS -->
-    <!-- link to font goes here -->
-
-    <!-- MAIN STYLESHEET -->
-    <link rel="stylesheet" href="theme.css">
 
     <!-- MAIN SCRIPT -->
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
