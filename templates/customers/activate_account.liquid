@@ -10,7 +10,7 @@
   {%- form 'activate_customer_password' -%}
 
     {%- if form.errors -%}
-      <h2 class="form-error-msg" tabindex="-1" autofocus>
+      <h2 class="form-msg form-msg--error" tabindex="-1" autofocus>
         {{ 'templates.contact.form.error_heading' | t }}
       </h2>
       <ul>
@@ -45,7 +45,7 @@
         {{ 'customer.activate_account.password' | t }}
       </label>
       {%- if form.errors contains 'password' -%}
-        <small id="password_error" class="form-error-msg">
+        <small id="password_error" class="form-msg form-msg--error">
           {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}
         </small>
       {%- endif -%}
@@ -67,7 +67,7 @@
         {{ 'customer.activate_account.password_confirm' | t }}
       </label>
       {%- if form.errors contains 'password_confirmation' -%}
-        <small id="password_confirmation_error" class="form-error-msg">
+        <small id="password_confirmation_error" class="form-msg form-msg--error">
           {{ form.errors.translated_fields['password_confirmation'] | capitalize }} {{ form.errors.messages['password_confirmation'] }}
         </small>
       {%- endif -%}

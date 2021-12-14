@@ -6,7 +6,7 @@
   {%- form 'create_customer', novalidate: 'novalidate' -%}
 
     {%- if form.errors -%}
-      <h2 class="form-error-msg" tabindex="-1" autofocus>
+      <h2 class="form-msg form-msg--error" tabindex="-1" autofocus>
         {{ 'templates.contact.form.error_heading' | t }}
       </h2>
       <ul> 
@@ -75,7 +75,7 @@
     </div>
 
     {%- if form.errors contains 'email' -%}
-      <span id="register_form_email_error" class="form-error-msg">
+      <span id="register_form_email_error" class="form-msg form-msg--error">
         {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
       </span>
     {%- endif -%}
@@ -98,7 +98,7 @@
     </div>
 
     {%- if form.errors contains 'password' -%}
-      <span id="register_form_password_error" class="form-error-msg">
+      <span id="register_form_password_error" class="form-msg form-msg--error">
         {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
       </span>
     {%- endif -%}

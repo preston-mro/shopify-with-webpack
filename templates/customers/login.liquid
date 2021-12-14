@@ -33,7 +33,7 @@
       </div>
 
       {%- if form.errors -%}
-        <small id="recover_email_email_error" class="form-error-msg">
+        <small id="recover_email_email_error" class="form-msg form-msg--error">
           {{ form.errors.messages['form'] }}
         </small>
       {%- endif -%}
@@ -55,7 +55,7 @@
     </h1>
 
     {%- if recover_success == true -%}
-      <h3 class="form-error-msg" tabindex="-1" autofocus>
+      <h3 class="form-msg form-msg--error" tabindex="-1" autofocus>
         {{ 'customer.recover_password.success' | t }}
       </h3>
     {%- endif -%}
@@ -63,7 +63,7 @@
     {%- form 'customer_login', novalidate: 'novalidate' -%}
 
       {%- if form.errors -%}
-        <h2 class="form-error-msg" tabindex="-1" autofocus>
+        <h2 class="form-msg form-msg--error" tabindex="-1" autofocus>
           <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
           {{ 'templates.contact.form.error_heading' | t }}
         </h2>
