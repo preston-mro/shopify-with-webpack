@@ -12,10 +12,11 @@
     {%- elsif template == "list-collections" -%}
       A List Of Collections
     {%- elsif template == "collection" -%}
-      {{ collection.title }}
+      {{ collection.title }} Collection
     {%- else -%}
       {{ template }}
     {%- endif -%}
+
   </h1>
 </header>
 
@@ -44,11 +45,6 @@
         "id": "enable_sticky_header",
         "default": true,
         "label": "Enable Sticky Header"
-      },
-      {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading"
       }
     ]
   }
