@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <!-- META TAGS -->
+    {% render 'meta-tags' %}
+
+    <!-- FAVICON -->
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    <!-- FONTS -->
+    <!-- link to font goes here -->
+
+    <!-- MAIN STYLESHEET -->
+    <link rel="stylesheet" href="theme.css">
+
+    <!-- BASELINE STYLES -->
+    <style>
+      html {
+        font-size: {{ settings.base_font_size }};
+      }
+
+      body {
+        font-family: {{ settings.base_font_family }};
+        color: {{ settings.base_font_color }};
+      }
+    </style>
+
+    <!-- MAIN SCRIPT -->
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+    <!-- ICONS -->
+    <!-- link to icon library goes here -->
+
+    {{ content_for_header }}
+
+  </head>
+
+  <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
+
+    <a class="skip-link visually-hidden" href="#main_content">{{ 'accessibility.skip_to_text' | t }}</a>
+
+    {% section 'header' %}
+
+    <main id="main_content" role="main" tabindex="-1" class="template-{{ template.name | handle }}-main-content">
+      {{ content_for_layout }}
+    </main>
+
+    {% section 'footer' %}
+
+  </body>
+</html>
